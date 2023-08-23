@@ -13,7 +13,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxcrudventas.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxcrudventas.Controller">
    <children>
       <TabPane layoutX="19.0" layoutY="23.0" prefHeight="526.0" prefWidth="741.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -169,14 +169,13 @@
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="718.0">
                                  <children>
-                                    <Button fx:id="EliminarProducto" layoutX="593.0" layoutY="197.0" mnemonicParsing="false" onAction="#eliminarProductoAction" prefHeight="25.0" prefWidth="115.0" text="Eliminar" />
                                     <TabPane layoutX="3.0" layoutY="1.0" prefHeight="234.0" prefWidth="711.0" tabClosingPolicy="UNAVAILABLE">
                                       <tabs>
                                         <Tab text="Producto perecedero">
                                           <content>
                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="711.0">
                                                    <children>
-                                                      <TableView fx:id="tablePerecedero" layoutX="5.0" layoutY="4.0" prefHeight="155.0" prefWidth="711.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+                                                      <TableView fx:id="tablePerecedero" layoutX="5.0" layoutY="4.0" prefHeight="186.0" prefWidth="711.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
                                                         <columns>
                                                           <TableColumn fx:id="columnCodigoPerece" prefWidth="75.0" text="Codigo" />
                                                           <TableColumn fx:id="columnNamePerece" prefWidth="75.0" text="Nombre" />
@@ -194,7 +193,7 @@
                                           <content>
                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TableView fx:id="tableEnvasado" layoutX="1.0" layoutY="7.0" prefHeight="155.0" prefWidth="722.0">
+                                                      <TableView fx:id="tableEnvasado" layoutX="1.0" layoutY="7.0" prefHeight="182.0" prefWidth="722.0">
                                                         <columns>
                                                           <TableColumn fx:id="columnCodigoEnva" prefWidth="75.0" text="Codigo" />
                                                           <TableColumn fx:id="columnNameEnva" prefWidth="75.0" text="Nombre" />
@@ -214,7 +213,7 @@
                                             <content>
                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TableView fx:id="tableRefrigerado" layoutX="4.0" layoutY="48.0" prefHeight="111.0" prefWidth="702.0">
+                                                      <TableView fx:id="tableRefrigerado" layoutX="4.0" layoutY="9.0" prefHeight="175.0" prefWidth="702.0">
                                                         <columns>
                                                           <TableColumn fx:id="columnCodigoRefri" prefWidth="75.0" text="Codigo" />
                                                           <TableColumn fx:id="columnNombreRefri" prefWidth="75.0" text="Nombre" />
@@ -255,15 +254,14 @@
                                             <Label layoutX="24.0" layoutY="88.0" prefHeight="17.0" prefWidth="54.0" text="Cantidad:" />
                                             <TextField fx:id="txtCantidadProductos" layoutX="88.0" layoutY="86.0" promptText="cantidad del producto" />
                                             <Label layoutX="254.0" layoutY="47.0" text="ID Del Cliente:" />
-                                            <Button fx:id="btnAgregarTransaccion" layoutX="411.0" layoutY="178.0" mnemonicParsing="false" onAction="#agregarTransaccionAction" prefHeight="25.0" prefWidth="115.0" text="Agregar" />
-                                            <Button fx:id="btnNuevaVenta" layoutX="260.0" layoutY="178.0" mnemonicParsing="false" onAction="#nuevaVentaAction" prefHeight="25.0" prefWidth="120.0" text="Nueva venta" />
-                                            <Button fx:id="btnGestionaTransaccion" layoutX="553.0" layoutY="178.0" mnemonicParsing="false" onAction="#gestionarTransaccionAction" prefHeight="25.0" prefWidth="145.0" text="Gestionar Transacción" />
+                                            <Button fx:id="btnAgregarTransaccion" layoutX="585.0" layoutY="178.0" mnemonicParsing="false" onAction="#agregarTransaccionAction" prefHeight="25.0" prefWidth="115.0" text="Agregar" />
+                                            <Button fx:id="btnNuevaVenta" layoutX="426.0" layoutY="178.0" mnemonicParsing="false" onAction="#nuevaVentaAction" prefHeight="25.0" prefWidth="120.0" text="Nueva venta" />
                                             <TextField fx:id="txtIdCliente" layoutX="337.0" layoutY="43.0" />
                                         </children>
                                     </AnchorPane>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                         <children>
-                                            <TableView fx:id="tableVenta" layoutX="8.0" layoutY="8.0" prefHeight="175.0" prefWidth="501.0">
+                                            <TableView fx:id="tableVenta" layoutX="8.0" layoutY="8.0" prefHeight="208.0" prefWidth="501.0">
                                                 <columns>
                                                     <TableColumn fx:id="columnVenta" prefWidth="75.0" text="Venta">
                                                         <columns>
@@ -276,8 +274,7 @@
                                                     </TableColumn>
                                                 </columns>
                                             </TableView>
-                                            <Button fx:id="btnEliminarTrasaccion" layoutX="573.0" layoutY="199.0" mnemonicParsing="false" onAction="#eliminarTransaccionAction" prefHeight="25.0" prefWidth="115.0" text="Eliminar" />
-                                            <TableView fx:id="tableDetalleVenta" layoutX="509.0" layoutY="7.0" prefHeight="178.0" prefWidth="216.0">
+                                            <TableView fx:id="tableDetalleVenta" layoutX="509.0" layoutY="7.0" prefHeight="209.0" prefWidth="216.0">
                                                 <columns>
                                                     <TableColumn fx:id="columnDetalles" prefWidth="75.0" text="Detalles">
                                                         <columns>

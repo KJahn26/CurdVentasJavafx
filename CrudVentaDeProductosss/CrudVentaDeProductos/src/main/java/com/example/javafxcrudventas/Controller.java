@@ -329,7 +329,7 @@ public class Controller {
         this.columnCantidadRefri.setCellValueFactory(new PropertyValueFactory<>("cantidadExistencia"));
 
         //Transaccion
-        this.columnClienteV.setCellValueFactory(new PropertyValueFactory<>("clienteV"));
+        this.columnClienteV.setCellValueFactory(new PropertyValueFactory<>("clienteVenta"));
         this.columnCodigoProductoV.setCellValueFactory(new PropertyValueFactory<>("codigoP"));
         this.columnIVA.setCellValueFactory(new PropertyValueFactory<>("iva"));
         this.columnTotal.setCellValueFactory(new PropertyValueFactory<>("totalCompra"));
@@ -465,17 +465,17 @@ public class Controller {
     void agregarTransaccionAction(ActionEvent event) {
         ventas.setCodigoP(txtCodigoP.getText());
         ventas.setFecha(txtFecha.getText());
-        ventas.obtenerClientev(txtIdCliente.getText(),listaClientesData);
+        ventas.obtenerClientev(txtIdCliente.getText());
         detalleVenta.setCantidadProductos(Integer.parseInt(txtCantidadProductos.getText()));
-        detalleVenta.calcularSubtotal(ventas.getCodigoP(), listaProductos);
+        detalleVenta.calcularSubtotal(ventas.getCodigoP());
         ventas.calcularIvaAplicado(detalleVenta.getSubtotal());
         detalleVenta.setCantidadProductos(Integer.parseInt(txtCantidadProductos.getText()));
         ventas.calcularTotalCompra(detalleVenta.getSubtotal());
-        detalleVenta.setProductoVendido(ventas.getCodigoP(), listaProductos);
+        detalleVenta.setProductoVendido(txtCodigoP.getText());
         listaVentas.add(ventas);
         listadetalles.add(detalleVenta);
 
-        JOptionPane.showMessageDialog(null,ventas.getClientev()+" "+ventas.getCodigoP()+" "+ventas.getIva()+" "+listaVentas.get(0).getClientev());
+        JOptionPane.showMessageDialog(null,detalleVenta.getProductoVendido() + ventas.getClientev());
 
         this.tableVenta.setItems(listaVentas);
         this.tableDetalleVenta.setItems(listadetalles);
@@ -515,16 +515,6 @@ public class Controller {
     }
 
     @FXML
-    void eliminarTransaccionAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void gestionarTransaccionAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void juridicoAction(ActionEvent event) {
 
         txtNit.setEditable(true);
@@ -534,7 +524,10 @@ public class Controller {
 
     @FXML
     void nuevaVentaAction(ActionEvent event) {
-
+        txtCodigoP.setText("");
+        txtIdCliente.setText("");
+        txtFecha.setText("");
+        txtCantidadProductos.setText("");
     }
 
     @FXML

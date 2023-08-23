@@ -1,12 +1,10 @@
 package com.example.modelo;
 
-import javafx.collections.ObservableList;
-
 import javax.swing.*;
 
 public class Venta {
     private String codigoP="";
-    private String clienteV="";
+    private String clienteVenta ="";
     private  double totalCompra=0;
     private double iva=0;
     private String detallesDeLaCompra="";
@@ -54,17 +52,27 @@ public class Venta {
     }
 
     public String getClientev() {
-        return clienteV;
+        return clienteVenta;
     }
 
-    public void obtenerClientev(String id, ObservableList<Cliente> c) {
-        for(int i=0;i<c.size();i++){
-            if(id.equals(c.get(i).getIdentificacion())){
-                clienteV=c.get(i).getNombre();
-                i=c.size();
+    public void obtenerClientev(String id) {
+        boolean cent=true;
+        for(int i=0;i<Almacen.clienteNaturalBd.size();i++){
+            if(id.equals(Almacen.clienteNaturalBd.get(i).getIdentificacion())){
+                clienteVenta =Almacen.clienteNaturalBd.get(i).getNombre();
+                i=Almacen.clienteNaturalBd.size();
+                cent=false;
             }
         }
-        if(clienteV.equals("")){
+        if(cent){
+            for(int i=0;i<Almacen.clienteJuridiocBd.size();i++){
+                if(id.equals(Almacen.clienteJuridiocBd.get(i).getIdentificacion())){
+                    clienteVenta =Almacen.clienteJuridiocBd.get(i).getNombre();
+                    i=Almacen.clienteJuridiocBd.size();
+                }
+            }
+        }
+        if(clienteVenta.equals("")){
             JOptionPane.showMessageDialog(null,"ingrese bien la identificacion");
         }
     }
